@@ -32,6 +32,7 @@ export const MapScreen = () => {
           const latLang = { latitude: condo.location.lat, longitude: condo.location.lng };
           return (
             <Marker
+              style={activeIndex === condo.id && styles.activePopup}
               coordinate={latLang}
               key={condo.id}
               onPress={async () => {
