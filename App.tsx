@@ -1,6 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Navigation } from './navigation';
+import { AppProvider } from './context/context';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,9 +15,11 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <Navigation />
-    </SafeAreaView>
+    <AppProvider>
+      <SafeAreaView style={styles.safeArea}>
+        <Navigation />
+      </SafeAreaView>
+    </AppProvider>
   );
 }
 
