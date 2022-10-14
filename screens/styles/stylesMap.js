@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
     },
     overlay: {
         position: 'absolute',
-        bottom: 65,
+        bottom: 95,
         width: '90%',
         height: 115,
         borderColor: colorGrayLight,
