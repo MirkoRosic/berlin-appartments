@@ -43,5 +43,59 @@ export default descriptionStyles = StyleSheet.create({
     },
     orange: {
         color: colorOrange
-    }
+    },
+    typesHeader: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: colorGray,
+        letterSpacing: 0.5,
+        marginTop: -5,
+        fontFamily: mainFont
+    },
+    typesContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        height: 100,
+    },
+    typesButton: {
+        backgroundColor: colorGreenLight,
+        padding: 7,
+        marginRight: 8,
+        borderRadius: 3,
+        fontFamily: mainFont,
+        marginTop: 8,
+    },
+    typesText: {
+        color: colorGray,
+        fontSize: 14,
+    },
+    footerContainer: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        paddingHorizontal: 15,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: colorGreenLight,
+        paddingVertical: 7,
+    },
+    footerText: {
+        lineHeight: 20,
+        fontSize: 14,
+        color: colorGray,
+    }, 
+    footerButton: {
+        backgroundColor: colorGreen,
+        borderRadius: 3,
+        paddingHorizontal: 12,
+        paddingVertical: 12,
+    }, 
+    footerButtonText: {
+        color: colorWhite,
+        textTransform: 'uppercase',
+        letterSpacing: 3,
+        lineHeight: 20,
+        fontSize: 16,
+    },
     });
