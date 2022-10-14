@@ -1,6 +1,6 @@
 # berlin-appartments
 
-React Native app that shows appartments in Berlin and their basic information on a map. By selecting an appartment, you can see additional its additional information.
+React Native app that shows appartments in Berlin and their basic information on a map. By selecting an appartment, you can see its additional information.
 
 Steps to run: 
 
