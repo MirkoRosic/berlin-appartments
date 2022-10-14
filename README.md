@@ -6,6 +6,6 @@ Steps to run:
 
 1. git clone with repository link
 2. open in terminal
-3. cd ./berlin-appartments
+3. cd berlin-appartments/
 4. npm install
 5. npx expo start -c
