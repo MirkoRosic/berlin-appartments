@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { Navigation } from './navigation';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    point: require('./assets/fonts/PointRegular.otf'),
+    pointLight: require('./assets/fonts/PointLight.otf'),
+    milkman: require('./assets/fonts/MilkmanRegular.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <Navigation />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  safeArea: {
+    display: 'flex',
+    position: 'relative',
+    backgroundColor: 'white',
+    height: '100%',
+    overflow: 'hidden',
   },
 });
