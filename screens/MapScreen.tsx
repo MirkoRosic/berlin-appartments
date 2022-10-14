@@ -6,9 +6,13 @@ import { getAll, getOne } from '../service/appartmentService';
 import { mapStartPoint } from '../utils/helpers';
 import styles from './styles/stylesMap';
 import MapView, { Marker } from 'react-native-maps';
+import { CustomMarker } from '../components/ui/CustomMarker';
+import { Overlay } from '../components/ui/overlay/Overlay';
 
 export const MapScreen = () => {
   const { state, dispatch } = useContext(AppContext);
+
+  const [activeIndex, setActiveIndex] = useState<number>();
 
   useEffect(() => {
     const loadMapData = async () => {
@@ -23,7 +27,7 @@ export const MapScreen = () => {
 
   return (
     <View style={styles.mapContainer}>
-      <MapView style={styles.map} region={mapStartPoint} toolbarEnabled={false}>
+      <MapView style={styles.map} initialRegion={mapStartPoint} toolbarEnabled={false}>
         {state.appartments.map((condo) => {
           const latLang = { latitude: condo.location.lat, longitude: condo.location.lng };
           return (
@@ -36,11 +40,15 @@ export const MapScreen = () => {
                   type: ActionType.GET_ONE,
                   payload: { ...condoData, appartment: condoData.payload },
                 });
+                setActiveIndex(condo.id);
               }}
-            ></Marker>
+            >
+              <CustomMarker isActive={activeIndex === condo.id} />
+            </Marker>
           );
         })}
       </MapView>
+      <Overlay />
     </View>
   );
 };
