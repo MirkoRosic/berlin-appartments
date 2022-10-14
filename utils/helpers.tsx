@@ -22,3 +22,10 @@ export const routes = {
     tab: 'Profile',
   },
 };
+
+export const mapStartPoint = {
+  latitude: 52.53176279999999,
+  longitude: 13.3664893,
+  latitudeDelta: 0.392,
+  longitudeDelta: 0.0221,
+};
